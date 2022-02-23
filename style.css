@@ -1,0 +1,190 @@
+body
+{
+	overflow: hidden;
+	height: 0;
+	margin: 0;
+	font-family: Arial;
+	user-select: none;
+	background :url("img/tło.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+main
+{
+	width: 32vw;
+	height: 42vw;
+	margin: 50vh auto 0;
+	transform: translateY(-21vw);
+	animation: mainShowingUp 1s;
+}
+nav
+{
+	display: flex;
+	height: 2vw;
+	background-color: #4724D5;
+}
+nav div
+{
+	width: 7.5vw;
+	height: 1vw;
+	padding: 0.55vw 0 0.45vw;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 0.9vw;
+	font-weight: bold;
+	cursor: pointer;
+}
+nav div:hover, img:hover, .activeField:hover
+{
+	background-color: #860A8A;
+}
+nav div:active, img:active, .activeField:active
+{
+	background-color: #860A8A;
+}
+img
+{
+	width: 1.2vw;
+	height: 1.2vw;
+	padding: 0.45vw 0.4vw 0.35vw;
+	cursor: pointer;
+}
+#bar
+{
+	display: flex;
+	width: 32vw;
+	height: 0.3vw;
+	margin-bottom: 1vw;
+	background: linear-gradient(90deg, gold 0%, gold 54%, gold 100%);
+}
+#bar div
+{
+	height: 0.35vw;
+	background-color: #4724D5;
+	transition: 0.3s;
+}
+#barInside0
+{
+	width: 0;
+	animation: barShowingUp0 1s;
+}
+#barInside1
+{
+	width: 24.5vw;
+	margin-left: 7.5vw;
+	animation: barShowingUp1 1s;
+}
+#status
+{
+	height: 2vw;
+	margin-bottom: 1vw;
+	padding: 0.4vw 0 0.3vw;
+	background-color: #4724D5;
+	text-align: center;
+	font-size: 1.5vw;
+}
+span
+{
+	font-weight: bold;
+}
+#board
+{
+	padding: 2vw;
+	background-color: #4724D5;
+}
+#board > div
+{
+	display: flex;
+}
+.activeField, .inactiveField
+{
+	width: 9vw;
+	height: 6vw;
+	padding-bottom: 4vw;
+	text-align: center;
+	font-size: 8vw;
+}
+.activeField
+{
+	cursor: pointer;
+}
+#field0, #field3, #field1, #field4
+{
+	border-right: 0.5vw solid #F5F5F5;
+	border-bottom: 0.5vw solid #F5F5F5;
+}
+#field2, #field5
+{
+	border-bottom: 0.5vw solid #F5F5F5;
+}	
+#field6, #field7
+{
+	border-right: 0.5vw solid #F5F5F5;
+}
+#line0, #line1, #line2, #line3
+{
+	position: fixed;
+	animation-duration: 1s;
+}
+#line0, #line1
+{
+	left: 2vw;
+	width: 28vw;
+	height: 0.5vw;
+	animation-name: horizontalLinesAnimation;
+}
+#line0
+{
+	top: 19vw;
+	background: linear-gradient(45deg, gold, gold);
+}
+#line1
+{
+	top: 29.5vw;
+	background: linear-gradient(45deg, gold 0%, gold 54%, gold 100%);
+	animation-delay: 0.05s;
+}
+#line2, #line3
+{
+	top: 9vw;
+	width: 0.5vw;
+	height: 31vw;
+	animation-name: verticalLinesAnimation;
+}
+#line2
+{
+	left: 11vw;
+	background: linear-gradient(135deg, gold, gold);
+	animation-delay: 0.1s;
+}
+#line3
+{
+	left: 20.5vw;
+	background: linear-gradient(135deg, gold 0%, gold 54%, gold 100%);
+	animation-delay: 0.15s;
+}
+@keyframes mainShowingUp
+{
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
+@keyframes barShowingUp0
+{
+	0% {width: 30vw}
+	100% {width: 0}
+}
+@keyframes barShowingUp1
+{
+	0% {width: 0;margin-left: 2vw}
+	100% {width: 24.5vw;margin-left: 7.5vw0}
+}
+@keyframes horizontalLinesAnimation
+{
+	0% {transform: translateX(-100vw)}
+	100% {transform: translateX(0)}
+}
+@keyframes verticalLinesAnimation
+{
+	0% {transform: translateY(100vw)}
+	100% {transform: translateY(0)}
+}
